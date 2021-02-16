@@ -1,0 +1,25 @@
+export enum COLOR {
+  OFF = 0,
+  BLACK = 0,
+  RED = 13,
+  LOW_RED = 19,
+  ORANGE = 25,
+  LOW_ORANGE = 31,
+  YELLOW = 37,
+  LOW_YELLOW = 43,
+  CHARTREUSSE = 49,
+  LOW_CHARTREUSSE = 55,
+  GREEN = 61,
+  LOW_GREEN = 66,
+  CYAN = 73,
+  LOW_CYAN = 79,
+  BLUE = 85,
+  LOW_BLUE = 91,
+  PURPLE = 97,
+  LOW_PURPLE = 103,
+  PINK = 109,
+  LOW_PINK = 115,
+  WHITE = 121,
+}
+
+export default COLOR

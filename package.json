@@ -1,0 +1,81 @@
+{
+  "name": "macropad",
+  "version": "1.0.0",
+  "description": "Macros for the MIDI Fighter",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "compile:clean": "rimraf dist",
+    "compile:declaration": "tsc --emitdeclarationonly",
+    "compile:library": "esbuild --sourcemap --platform=node --target=esnext --outdir=dist src/**.ts src/**/*.ts",
+    "compile": "run-p -s compile:*",
+    "lint:tsc": "tsc --noemit",
+    "lint:xo": "xo",
+    "lint": "run-p -s lint:*",
+    "node": "node ./dist/index.js",
+    "start": "run-s -s compile:clean compile:library node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macarie/macropad.git"
+  },
+  "author": {
+    "name": "Raul Macarie",
+    "email": "raul@macarie.me",
+    "url": "https://macarie.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macarie/macropad/issues"
+  },
+  "homepage": "https://github.com/macarie/macropad#readme",
+  "dependencies": {
+    "@sweet-monads/iterator": "^2.3.0",
+    "@sweet-monads/maybe": "^2.3.0",
+    "easymidi": "^2.0.1",
+    "observable-membrane": "^1.0.1",
+    "robotjs": "file:..\\robotjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.8.42",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3",
+    "xo": "^0.37.1"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/import-index": [
+        "off"
+      ],
+      "import/extensions": [
+        "off"
+      ],
+      "import/no-useless-path-segments": [
+        "off"
+      ],
+      "unicorn/no-fn-reference-in-iterator": [
+        "off"
+      ],
+      "unicorn/no-reduce": [
+        "off"
+      ],
+      "import/no-named-as-default": [
+        "off"
+      ],
+      "@typescript-eslint/prefer-literal-enum-member": [
+        "off"
+      ]
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "bracketSpacing": true,
+    "useTabs": false,
+    "endOfLine": "lf",
+    "trailingComma": "es5"
+  }
+}
